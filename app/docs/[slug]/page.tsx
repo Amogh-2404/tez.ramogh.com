@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import data from '@/content/docs.json';
 import { DocPage } from '@/components/doc-page';
+import { pageMetadata } from '@/lib/metadata';
 export const dynamicParams = false;
 export function generateStaticParams() {
   return data.docs
@@ -15,20 +16,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const doc = data.docs.find((item) => item.slug === slug);
-  return {
-    alternates: { canonical: `/docs/${slug}` },
-    openGraph: {
-      title: doc ? `${doc.label} — Tez` : 'Tez',
-      description: doc?.description,
-      url: `/docs/${slug}`,
-    },
-    twitter: {
-      title: doc ? `${doc.label} — Tez` : 'Tez',
-      description: doc?.description,
-    },
-    title: doc ? `${doc.label} — Tez` : 'Page not found — Tez',
-    description: doc?.description,
-  };
+  if (!doc) notFound();
+  return pageMetadata(`${doc.label} — Tez`, doc.description, `/docs/${slug}`);
 }
 export default async function Page({
   params,

@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import { Workbench } from '@/components/workbench';
 import { RunFixture } from '@/components/run-fixture';
-export const metadata: Metadata = {
-  title: 'Route workbench — Tez',
-  alternates: { canonical: '/workbench' },
-  openGraph: { title: 'Route workbench — Tez', url: '/workbench' },
-  description:
-    'Create a fixed HTTP response, export valid Tez configuration, and try it locally. Everything stays in your browser.',
-};
+import { pageMetadata } from '@/lib/metadata';
+export const metadata: Metadata = pageMetadata(
+  'Route workbench — Tez',
+  'Create a fixed HTTP response, export valid Tez configuration, and try it locally. Everything stays in your browser.',
+  '/workbench',
+);
 export default function WorkbenchPage() {
   return (
     <main id="main" className="workbench-page section-shell">
