@@ -1,4 +1,10 @@
 import { ArrowUpRight, ArrowRight } from 'lucide-react';
+import { CopyButton } from '@/components/copy-button';
+
+const dockerCommand = `docker run --rm --pull=always --name tez \\
+  --read-only --cap-drop=ALL \\
+  --security-opt=no-new-privileges \\
+  -p 127.0.0.1:8080:8080 ramogh2404/tez:main`;
 
 export default function Home() {
   return (
@@ -82,15 +88,15 @@ export default function Home() {
         </div>
         <div className="terminal">
           <div className="terminal-bar">
-            <span>TERMINAL</span>
             <span>Docker · development build</span>
+            <CopyButton text={dockerCommand} label="Copy Docker command" />
           </div>
           <pre>
             <code>
               <span className="code-comment"># Start Tez</span>
-              {'\n'}docker run --rm --pull=always --name tez \{'\n'} --read-only
-              --cap-drop=ALL \{'\n'} --security-opt=no-new-privileges \{'\n'} -p
-              127.0.0.1:8080:8080 ramogh2404/tez:main{'\n\n'}
+              {'\n'}
+              {dockerCommand}
+              {'\n\n'}
               <span className="code-comment"># In another terminal</span>
               {'\n'}curl --fail http://127.0.0.1:8080/health{'\n'}
               <span className="code-answer">{'{"status":"ok"}'}</span>
