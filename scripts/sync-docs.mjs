@@ -48,6 +48,26 @@ const sourceRevision = execFileSync('git', ['rev-parse', 'HEAD'], {
   encoding: 'utf8',
 }).trim();
 const docs = [];
+const descriptions = {
+  'getting-started':
+    'Run Tez with Docker or build from source. Validate your configuration, serve a response fixture, and edit it locally.',
+  recipes:
+    'Configure fixed success and error responses, then serve a frontend and its fixtures from the same origin.',
+  configuration:
+    'Reference for Tez command-line flags, JSON route configuration, built-in endpoints, and resource limits.',
+  deployment:
+    'Run Tez containers, mount configuration and static files, inspect image revisions, and configure a reverse proxy.',
+  architecture:
+    'How Tez accepts connections, parses HTTP, selects handlers, accesses files, and writes responses.',
+  engineering:
+    'The design decisions behind Tez: connection ownership, asynchronous I/O, routing, caching, and filesystem confinement.',
+  performance:
+    'The evidence required to evaluate Tez performance, including a reproducible measurement plan and current limitations.',
+  contributing:
+    'Build and test Tez, follow the project conventions, and prepare a focused contribution.',
+  releases:
+    'How Tez versions, validates, publishes, and verifies source releases and container images.',
+};
 await mkdir(resolve(root, 'public/diagrams'), { recursive: true });
 await mkdir(resolve(root, 'public/docs-assets'), { recursive: true });
 for (const [slug, label, group, file] of sources) {
@@ -118,12 +138,7 @@ for (const [slug, label, group, file] of sources) {
     /href="(\/[^"#]*?)\/(?=["#])/g,
     'href="$1',
   );
-  const description =
-    markdown
-      .split('\n')
-      .filter((line) => line && !line.startsWith('#'))[0]
-      ?.replace(/[`*_]/g, '')
-      .slice(0, 180) || `${label} for Tez.`;
+  const description = descriptions[slug];
   docs.push({
     slug,
     label,
