@@ -1,6 +1,6 @@
 # Tez website
 
-The product website and field guide for [Tez](https://github.com/Amogh-2404/Tez), maintained by R. Amogh.
+The [website and documentation](https://tez.ramogh.com) for [Tez](https://github.com/Amogh-2404/Tez), maintained by R. Amogh.
 
 The site is a static export. Reading the documentation needs no application backend; the route workbench runs entirely in the browser. Exported configuration is validated against the same constrained schema documented in the interface.
 
@@ -27,7 +27,7 @@ npm run check
 
 The build exports all pages to `dist/client`, then generates the sitemap and robots file. `check` verifies page headings, canonical URLs, and local links, assets, and fragments. No benchmark numbers are inferred from build or test timings.
 
-## Update the field guide
+## Update the documentation
 
 Keep a Tez checkout beside this repository, then run:
 

@@ -1,5 +1,5 @@
 {
-  "origin": "https://tez.ramogh2404.chatgpt.site",
+  "origin": "https://tez.ramogh.com",
   "name": "Tez",
   "description": "A C++17 HTTP server for local response fixtures and static files. Configure routes in JSON, run with Docker, and read the implementation. By R. Amogh."
 }

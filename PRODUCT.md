@@ -12,7 +12,7 @@ The first useful result is a successful `/health` request. The next is a develop
 - Identify selected files, configured route count, and invalid route fields.
 - Preserve container defaults when developers supply extra CLI flags.
 - Provide fixed success/error fixtures and a real same-origin browser example.
-- Publish a field guide tied to the source revision and a local configuration workbench.
+- Publish documentation tied to the source revision and a local configuration workbench.
 
 ## Visual direction
 
