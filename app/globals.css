@@ -81,7 +81,8 @@ select:focus-visible {
 .docs-page :focus-visible {
   outline-color: #3f5c30;
 }
-.docs-page pre :focus-visible {
+.docs-page pre :focus-visible,
+.start-section .terminal :focus-visible {
   outline-color: var(--accent);
 }
 button {
