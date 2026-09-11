@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="665" viewBox="0 0 1100 665" role="img" aria-labelledby="title desc">
+<title id="title">Static access begins at an open directory</title><desc id="desc">Decode once, reject unsafe components, open relative to root with symlink rejection, inspect file and validate cache.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52615a"/></marker></defs>
+<rect width="1100" height="665" fill="#f7f6f1"/>
+<g font-family="Helvetica,Arial,sans-serif">
+<text x="40" y="44" font-size="13" fill="#52615a" font-weight="700">TEZ / ARCHITECTURE</text>
+<text x="40" y="86" font-size="30" fill="#1b211e" font-weight="700">Static access begins at an open directory</text>
+<path d="M40 108 H1060" stroke="#cbd1c9"/>
+<text x="40" y="169" font-size="21" fill="#c47f19" font-weight="700">01</text>
+<text x="100" y="167" font-size="21" fill="#1b211e" font-weight="700">Decode the request path once</text>
+<text x="100" y="195" font-size="17" fill="#52615a" font-weight="400">Remove query; reject malformed escapes and encoded separators.</text>
+<path d="M100 212 H1060" stroke="#cbd1c9"/>
+<text x="40" y="262" font-size="21" fill="#c47f19" font-weight="700">02</text>
+<text x="100" y="260" font-size="21" fill="#1b211e" font-weight="700">Validate every path component</text>
+<text x="100" y="288" font-size="17" fill="#52615a" font-weight="400">Reject traversal, dotfiles, empty segments, and control bytes.</text>
+<path d="M100 305 H1060" stroke="#cbd1c9"/>
+<text x="40" y="355" font-size="21" fill="#c47f19" font-weight="700">03</text>
+<text x="100" y="353" font-size="21" fill="#1b211e" font-weight="700">Open relative to the root descriptor</text>
+<text x="100" y="381" font-size="17" fill="#52615a" font-weight="400">Walk directories with openat; reject symbolic links at each step.</text>
+<path d="M100 398 H1060" stroke="#cbd1c9"/>
+<text x="40" y="448" font-size="21" fill="#c47f19" font-weight="700">04</text>
+<text x="100" y="446" font-size="21" fill="#1b211e" font-weight="700">Inspect the opened file</text>
+<text x="100" y="474" font-size="17" fill="#52615a" font-weight="400">Regular files only; enforce the 16 MiB size limit before reading.</text>
+<path d="M100 491 H1060" stroke="#cbd1c9"/>
+<text x="40" y="541" font-size="21" fill="#c47f19" font-weight="700">05</text>
+<text x="100" y="539" font-size="21" fill="#1b211e" font-weight="700">Revalidate cache identity and metadata</text>
+<text x="100" y="567" font-size="17" fill="#52615a" font-weight="400">A cache hit follows file access checks; changed files miss.</text>
+<text x="40" y="639" font-size="15" fill="#52615a" font-weight="400">The static tree must remain trusted. These checks are not isolation from hostile filesystem administrators.</text>
+</g></svg>

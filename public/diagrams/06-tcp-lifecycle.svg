@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="600" viewBox="0 0 1100 600" role="img" aria-labelledby="title desc">
+<title id="title">TCP lifecycle meets the session lifecycle</title><desc id="desc">An Asio acceptor accepts sockets; Beast sessions read and write; completion, deadlines and signals end ownership.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52615a"/></marker></defs>
+<rect width="1100" height="600" fill="#f7f6f1"/>
+<g font-family="Helvetica,Arial,sans-serif">
+<text x="40" y="44" font-size="13" fill="#52615a" font-weight="700">TEZ / ARCHITECTURE</text>
+<text x="40" y="86" font-size="30" fill="#1b211e" font-weight="700">TCP lifecycle meets the session lifecycle</text>
+<path d="M40 108 H1060" stroke="#cbd1c9"/>
+<text x="40" y="169" font-size="20" fill="#c47f19" font-weight="700">Listen</text>
+<text x="200" y="169" font-size="20" fill="#1b211e" font-weight="700">tcp::acceptor</text>
+<text x="480" y="169" font-size="16" fill="#52615a" font-weight="400">Bind configured address and port; accept asynchronously.</text>
+<path d="M40 191 H1060" stroke="#cbd1c9"/>
+<text x="40" y="247" font-size="20" fill="#c47f19" font-weight="700">Accept</text>
+<text x="200" y="247" font-size="20" fill="#1b211e" font-weight="700">Session admission</text>
+<text x="480" y="247" font-size="16" fill="#52615a" font-weight="400">Count active sessions; close excess accepted sockets.</text>
+<path d="M40 269 H1060" stroke="#cbd1c9"/>
+<text x="40" y="325" font-size="20" fill="#c47f19" font-weight="700">Read</text>
+<text x="200" y="325" font-size="20" fill="#1b211e" font-weight="700">Beast parser + buffer</text>
+<text x="480" y="325" font-size="16" fill="#52615a" font-weight="400">Retain unread bytes; enforce header and body limits.</text>
+<path d="M40 347 H1060" stroke="#cbd1c9"/>
+<text x="40" y="403" font-size="20" fill="#c47f19" font-weight="700">Respond</text>
+<text x="200" y="403" font-size="20" fill="#1b211e" font-weight="700">Async write + strand</text>
+<text x="480" y="403" font-size="16" fill="#52615a" font-weight="400">Keep response alive; finish write before next dispatch.</text>
+<path d="M40 425 H1060" stroke="#cbd1c9"/>
+<text x="40" y="481" font-size="20" fill="#c47f19" font-weight="700">Close</text>
+<text x="200" y="481" font-size="20" fill="#1b211e" font-weight="700">Session teardown</text>
+<text x="480" y="481" font-size="16" fill="#52615a" font-weight="400">Peer close, I/O error, deadline, request cap, or shutdown.</text>
+<path d="M40 503 H1060" stroke="#cbd1c9"/>
+<text x="40" y="574" font-size="15" fill="#52615a" font-weight="400">Shutdown cancels network work. It does not promise a grace period for draining in-flight responses.</text>
+</g></svg>

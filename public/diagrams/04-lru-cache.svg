@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="555" viewBox="0 0 1100 555" role="img" aria-labelledby="title desc">
+<title id="title">A cache hit must still identify the file</title><desc id="desc">File access validation precedes cache lookup; metadata and TTL determine freshness; entries and bytes are bounded.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52615a"/></marker></defs>
+<rect width="1100" height="555" fill="#f7f6f1"/>
+<g font-family="Helvetica,Arial,sans-serif">
+<text x="40" y="44" font-size="13" fill="#52615a" font-weight="700">TEZ / ARCHITECTURE</text>
+<text x="40" y="86" font-size="30" fill="#1b211e" font-weight="700">A cache hit must still identify the file</text>
+<path d="M40 108 H1060" stroke="#cbd1c9"/>
+<rect x="40" y="150" width="330" height="118" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="58" y="182" font-size="20" fill="#1b211e" font-weight="700">Open + validate file</text>
+<text x="58" y="209" font-size="16" fill="#52615a" font-weight="400">Root confinement and regular file</text>
+<text x="58" y="233" font-size="16" fill="#52615a" font-weight="400">Identity, size, timestamps</text>
+<rect x="420" y="150" width="640" height="118" fill="#ffffff" stroke="#c47f19" stroke-width="1.5"/>
+<text x="438" y="182" font-size="20" fill="#1b211e" font-weight="700">Match cached identity + metadata + age</text>
+<text x="438" y="209" font-size="16" fill="#52615a" font-weight="400">Valid hit: return body and promote recency</text>
+<text x="438" y="233" font-size="16" fill="#52615a" font-weight="400">Miss: bounded read; metadata recheck before insertion</text>
+<path d="M370 209 L420 209" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="40" y="325" font-size="16" fill="#52615a" font-weight="700">Most recently used</text>
+<text x="867" y="325" font-size="16" fill="#52615a" font-weight="700">Least recently used</text>
+<rect x="40" y="347" width="240" height="87" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="58" y="379" font-size="20" fill="#1b211e" font-weight="700">File A</text>
+<text x="58" y="406" font-size="16" fill="#52615a" font-weight="400">body + metadata</text>
+<path d="M280 390 L300 390" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="300" y="347" width="240" height="87" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="318" y="379" font-size="20" fill="#1b211e" font-weight="700">File B</text>
+<text x="318" y="406" font-size="16" fill="#52615a" font-weight="400">body + metadata</text>
+<path d="M540 390 L560 390" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="560" y="347" width="240" height="87" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="578" y="379" font-size="20" fill="#1b211e" font-weight="700">File C</text>
+<text x="578" y="406" font-size="16" fill="#52615a" font-weight="400">body + metadata</text>
+<path d="M800 390 L820 390" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="820" y="347" width="240" height="87" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="838" y="379" font-size="20" fill="#1b211e" font-weight="700">File D</text>
+<text x="838" y="406" font-size="16" fill="#52615a" font-weight="400">body + metadata</text>
+<text x="40" y="484" font-size="21" fill="#1b211e" font-weight="700">50 entries  /  32 MiB logical bytes  /  60-second TTL</text>
+<text x="40" y="529" font-size="15" fill="#52615a" font-weight="400">Evict from the tail until both budgets fit. The logical-byte budget is not total process memory.</text>
+</g></svg>

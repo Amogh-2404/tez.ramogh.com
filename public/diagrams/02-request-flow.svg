@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="590" viewBox="0 0 1100 590" role="img" aria-labelledby="title desc">
+<title id="title">One request, one ordered response</title><desc id="desc">Read headers, validate, optionally continue, read body, dispatch, write and reuse or close.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#52615a"/></marker></defs>
+<rect width="1100" height="590" fill="#f7f6f1"/>
+<g font-family="Helvetica,Arial,sans-serif">
+<text x="40" y="44" font-size="13" fill="#52615a" font-weight="700">TEZ / ARCHITECTURE</text>
+<text x="40" y="86" font-size="30" fill="#1b211e" font-weight="700">One request, one ordered response</text>
+<path d="M40 108 H1060" stroke="#cbd1c9"/>
+<rect x="40" y="150" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="58" y="182" font-size="20" fill="#1b211e" font-weight="700">01  Read headers</text>
+<text x="58" y="209" font-size="16" fill="#52615a" font-weight="400">Persistent connection buffer</text>
+<text x="58" y="233" font-size="16" fill="#52615a" font-weight="400">Header deadline + size limit</text>
+<rect x="405" y="150" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="423" y="182" font-size="20" fill="#1b211e" font-weight="700">02  Validate</text>
+<text x="423" y="209" font-size="16" fill="#52615a" font-weight="400">Host, target, framing, limits</text>
+<text x="423" y="233" font-size="16" fill="#52615a" font-weight="400">100 Continue when expected</text>
+<rect x="770" y="150" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="788" y="182" font-size="20" fill="#1b211e" font-weight="700">03  Read body</text>
+<text x="788" y="209" font-size="16" fill="#52615a" font-weight="400">Fixed length or chunked</text>
+<text x="788" y="233" font-size="16" fill="#52615a" font-weight="400">Body deadline + payload limit</text>
+<path d="M330 207 L405 207" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M695 207 L770 207" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="770" y="355" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="788" y="387" font-size="20" fill="#1b211e" font-weight="700">04  Dispatch</text>
+<text x="788" y="414" font-size="16" fill="#52615a" font-weight="400">Built-in / JSON route / file</text>
+<text x="788" y="438" font-size="16" fill="#52615a" font-weight="400">No next-request dispatch yet</text>
+<rect x="405" y="355" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="423" y="387" font-size="20" fill="#1b211e" font-weight="700">05  Write</text>
+<text x="423" y="414" font-size="16" fill="#52615a" font-weight="400">Response lifetime retained</text>
+<text x="423" y="438" font-size="16" fill="#52615a" font-weight="400">HEAD sends headers only</text>
+<rect x="40" y="355" width="290" height="114" fill="#ffffff" stroke="#cbd1c9" stroke-width="1.5"/>
+<text x="58" y="387" font-size="20" fill="#1b211e" font-weight="700">06  Reuse or close</text>
+<text x="58" y="414" font-size="16" fill="#52615a" font-weight="400">Keep-alive + request cap</text>
+<text x="58" y="438" font-size="16" fill="#52615a" font-weight="400">Keep unread bytes for next read</text>
+<path d="M915 264 L915 355" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M770 412 L695 412" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M405 412 L330 412" fill="none" stroke="#52615a" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M40 412 H20 V207 H40" fill="none" stroke="#c47f19" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="403" y="315" font-size="17" fill="#52615a" font-weight="400">Parsing errors close the connection.</text>
+<text x="40" y="564" font-size="15" fill="#52615a" font-weight="400">TCP read boundaries are not HTTP message boundaries. Unused input survives the request.</text>
+</g></svg>
